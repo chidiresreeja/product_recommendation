@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Top Recommendations for "{{ product }}"</h2>
+        <ul>
+            {% for rec in recommendations %}
+                <li><strong>{{ rec.title }}</strong> — ⭐ {{ rec.stars }} | ₹{{ rec.price }}</li>
+            {% endfor %}
+        </ul>
+        <br>
+        <a href="/"><button>Back to Home</button></a>
+    </div>
+</body>
+</html>
